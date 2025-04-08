@@ -2,7 +2,10 @@
 POST http://localhost:8080/realms/myrealm/protocol/openid-connect/token
 Content-Type: application/x-www-form-urlencoded
 
-username=robson&password=password&grant_type=password&client_id=myclient
+username=robson
+&password=password
+&grant_type=password
+&client_id=myclient
 
 ### Get User Info
 GET http://localhost:8080/realms/myrealm/protocol/openid-connect/userinfo
