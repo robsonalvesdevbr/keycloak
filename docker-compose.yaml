@@ -54,7 +54,7 @@ services:
       - db-keycloak
 
   db-keycloak:
-    image: postgres:17
+    image: postgres:17.4-alpine
     container_name: db-keycloak
     environment:
       - POSTGRES_USER=keycloak
