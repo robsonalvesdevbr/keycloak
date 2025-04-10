@@ -2,6 +2,7 @@ services:
   keycloak:
     image: quay.io/keycloak/keycloak:22.0.0
     container_name: keycloak
+    restart: unless-stopped
     command: start-dev
     environment:
       - KEYCLOAK_ADMIN=${KEYCLOAK_ADMIN:-admin}
@@ -18,6 +19,7 @@ services:
   db-keycloak:
     image: postgres:15.3-alpine
     container_name: db-keycloak
+    restart: unless-stopped
     environment:
       - POSTGRES_USER=${POSTGRES_USER:-keycloak}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-keycloak}
@@ -29,6 +31,7 @@ services:
   # keycloak:
   #   image: quay.io/keycloak/keycloak:26.1.4
   #   container_name: keycloak
+  #   restart: unless-stopped
   #   command: start-dev
   #   #command: start-dev --db postgres --db-url-host db-keycloak --db-username keycloak --db-password keycloak
   #   #command: start-dev --db ${KC_DB:-postgres} --db-url-host ${KC_DB_HOST:-db-keycloak} --db-username ${POSTGRES_USER:-keycloak} --db-password ${POSTGRES_PASSWORD:-keycloak}
@@ -47,6 +50,7 @@ services:
   # db-keycloak:
   #   image: postgres:17.4-alpine
   #   container_name: db-keycloak
+  #   restart: unless-stopped
   #   environment:
   #     - POSTGRES_USER=${POSTGRES_USER:-keycloak}
   #     - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-keycloak}
