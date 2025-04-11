@@ -30,6 +30,10 @@ services:
 
   keycloak:
     image: quay.io/keycloak/keycloak:26.1.4
+    labels:
+      - br.com.consilux.service=keycloak
+      - br.com.consilux.service.version=26.1.4
+      - br.com.consilux.service.description=Keycloak
     container_name: keycloak
     restart: unless-stopped
     command: --verbose start-dev
@@ -49,6 +53,10 @@ services:
 
   db-keycloak:
     image: postgres:17.4-alpine
+    labels:
+      - br.com.consilux.service=keycloak
+      - br.com.consilux.service.version=17.4-alpine
+      - br.com.consilux.service.description=PostgreSQL
     container_name: db-keycloak
     restart: unless-stopped
     environment:
