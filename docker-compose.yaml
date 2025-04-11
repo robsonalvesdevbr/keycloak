@@ -31,7 +31,7 @@ services:
   keycloak:
     image: quay.io/keycloak/keycloak:26.1.4
     labels:
-      - br.dev.robsonalves.service=keycloak
+      - br.dev.robsonalves.service.group=keycloak
       - br.dev.robsonalves.service.version=26.1.4
       - br.dev.robsonalves.service.description=Keycloak
     container_name: keycloak
@@ -54,7 +54,7 @@ services:
   db-keycloak:
     image: postgres:17.4-alpine
     labels:
-      - br.dev.robsonalves.service=keycloak
+      - br.dev.robsonalves.service.group=keycloak
       - br.dev.robsonalves.service.version=17.4-alpine
       - br.dev.robsonalves.service.description=PostgreSQL
     container_name: db-keycloak
