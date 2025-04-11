@@ -1,0 +1,1099 @@
+{
+  "apidogProject": "1.0.0",
+  "$schema": {
+    "app": "apidog",
+    "type": "project",
+    "version": "1.2.0"
+  },
+  "info": {
+    "name": "KeyCloak",
+    "description": "",
+    "mockRule": {
+      "rules": [],
+      "enableSystemRule": true
+    }
+  },
+  "apiCollection": [
+    {
+      "name": "Root",
+      "id": 3464898,
+      "auth": {},
+      "securityScheme": {},
+      "parentId": 0,
+      "serverId": "",
+      "description": "",
+      "identityPattern": {
+        "httpApi": {
+          "type": "methodAndPath",
+          "bodyType": "",
+          "fields": []
+        }
+      },
+      "shareSettings": {},
+      "visibility": "SHARED",
+      "preProcessors": [
+        {
+          "id": "inheritProcessors",
+          "type": "inheritProcessors",
+          "data": {}
+        }
+      ],
+      "postProcessors": [
+        {
+          "id": "inheritProcessors",
+          "type": "inheritProcessors",
+          "data": {}
+        }
+      ],
+      "inheritPostProcessors": {},
+      "inheritPreProcessors": {},
+      "items": [
+        {
+          "name": "Body:Password:AccessGrant",
+          "api": {
+            "id": "15774733",
+            "method": "post",
+            "path": "http://{{host}}:8080/realms/{{healm}}/protocol/openid-connect/token",
+            "parameters": {
+              "path": []
+            },
+            "auth": {},
+            "securityScheme": {},
+            "commonParameters": {
+              "query": [],
+              "body": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "21620342",
+                "code": 200,
+                "name": "Success",
+                "headers": [],
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "description": "",
+                "contentType": "json",
+                "mediaType": "",
+                "oasExtensions": ""
+              }
+            ],
+            "responseExamples": [],
+            "requestBody": {
+              "type": "application/x-www-form-urlencoded",
+              "parameters": [
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "SBz5bFh0TJ",
+                  "example": "password",
+                  "enable": true,
+                  "name": "grant_type"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "9kHkI3qT4y",
+                  "example": "{{username}}",
+                  "enable": true,
+                  "name": "username"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "mm9xW8zS9L",
+                  "example": "{{password}}",
+                  "enable": true,
+                  "name": "password"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "CAQmUuRUsV",
+                  "example": "{{myclientaccessgrant}}",
+                  "enable": true,
+                  "name": "client_id"
+                }
+              ],
+              "mediaType": "",
+              "examples": [],
+              "oasExtensions": ""
+            },
+            "description": "",
+            "tags": [],
+            "status": "developing",
+            "serverId": "",
+            "operationId": "",
+            "sourceUrl": "",
+            "ordering": 20,
+            "cases": [],
+            "mocks": [],
+            "customApiFields": "{}",
+            "advancedSettings": {
+              "disabledSystemHeaders": {}
+            },
+            "mockScript": {},
+            "codeSamples": [],
+            "commonResponseStatus": {},
+            "responseChildren": [
+              "BLANK.21620342"
+            ],
+            "visibility": "INHERITED",
+            "oasExtensions": "",
+            "preProcessors": [],
+            "postProcessors": [],
+            "inheritPostProcessors": {},
+            "inheritPreProcessors": {}
+          }
+        },
+        {
+          "name": "Auth:Password:AccessGrant",
+          "api": {
+            "id": "15775555",
+            "method": "post",
+            "path": "",
+            "parameters": {},
+            "auth": {
+              "type": "oauth2",
+              "oauth2": {
+                "addTokenTo": "header",
+                "tokenDetail": "{\"refresh_token\":\"eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIyMGYxN2UxZS02YWIyLTQxMDEtOTNkYS02ZWRiMzZkOTBiZDcifQ.eyJleHAiOjE3NDQzMzM4NDAsImlhdCI6MTc0NDMzMjA0MCwianRpIjoiYzI3ZmI0MjEtN2JhYi00YTdmLTgxNWYtNmFjZTA0ODY1MmJlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9teXJlYWxtIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9teXJlYWxtIiwic3ViIjoiMjEzN2I0NTMtOWI2OS00M2QxLWIzYjEtNzY4ODkyMDUwYjkwIiwidHlwIjoiUmVmcmVzaCIsImF6cCI6Im15Y2xpZW50LWFjY2Vzc2dyYW50Iiwic2lkIjoiNTA5YWFjODMtZmI3Zi00NWRiLTkwNTctMzdjODFmYzdkMTgyIiwic2NvcGUiOiJwcm9maWxlIGFjciBiYXNpYyByb2xlcyB3ZWItb3JpZ2lucyBlbWFpbCJ9.QME--5b66a5cEqxXbov2ES1unf0EbV3DoC4udShXpOfGD7NYner5SDDmh7cjLfWEHrz8JzGVAOyp2rtpgIR5Ng\",\"id_token\":\"\",\"access_token\":\"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFLU54cTdaN2VkNzVfUUdrSG1PYXlCRW53OUlwVWlzLVJzVkNSdXAtdmFnIn0.eyJleHAiOjE3NDQzMzIzNDAsImlhdCI6MTc0NDMzMjA0MCwianRpIjoiMzM0YjQ5OTgtMGYzYi00NDM4LTkwNjItMzIyNmVhNGM5YjA4IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9teXJlYWxtIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjIxMzdiNDUzLTliNjktNDNkMS1iM2IxLTc2ODg5MjA1MGI5MCIsInR5cCI6IkJlYXJlciIsImF6cCI6Im15Y2xpZW50LWFjY2Vzc2dyYW50Iiwic2lkIjoiNTA5YWFjODMtZmI3Zi00NWRiLTkwNTctMzdjODFmYzdkMTgyIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW15cmVhbG0iLCJteXJlYWxtIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiUm9ic29uIEFsdmVzIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicm9ic29uQHRlc3R1c2VyLmNvbSIsImdpdmVuX25hbWUiOiJSb2Jzb24iLCJmYW1pbHlfbmFtZSI6IkFsdmVzIiwiZW1haWwiOiJyb2Jzb25AdGVzdHVzZXIuY29tIn0.lQWdixaG120TvHVdGStMini8IeZKwZew47GF5YbETPSTTAP6DOhcUe0gOSj4uiy4jVSPseTC4gyoR263MdMgma50so5fAbfYl4vLNa1tSJLwJJeNLyoIPBA03YFgVrPHsh48xtOXXIXFIY5kw8JsT-yPA-liLdwKC5AP-Bw1XkwFoiLqfgYI1IC1rNM2sM_97XjcJ2IGRiNOQFanw7k3QqM4NF7Sed1U4ndjY4nbNPUkS6YtO6oxF4-IqePLdEKuNhbwfzdLK_rB6FIoI-iBW8QH91So3BQBMsfirk4TWfZ5NGFeO7aY5pIRK6XxrKcMyxBVSeZudMyHndeQ8Zx0fQ\",\"token_type\":\"Bearer\",\"scope\":\"profile email\",\"expires_in\":300,\"timestamp\":1744332040}",
+                "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFLU54cTdaN2VkNzVfUUdrSG1PYXlCRW53OUlwVWlzLVJzVkNSdXAtdmFnIn0.eyJleHAiOjE3NDQzMzIzNDAsImlhdCI6MTc0NDMzMjA0MCwianRpIjoiMzM0YjQ5OTgtMGYzYi00NDM4LTkwNjItMzIyNmVhNGM5YjA4IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9teXJlYWxtIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjIxMzdiNDUzLTliNjktNDNkMS1iM2IxLTc2ODg5MjA1MGI5MCIsInR5cCI6IkJlYXJlciIsImF6cCI6Im15Y2xpZW50LWFjY2Vzc2dyYW50Iiwic2lkIjoiNTA5YWFjODMtZmI3Zi00NWRiLTkwNTctMzdjODFmYzdkMTgyIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW15cmVhbG0iLCJteXJlYWxtIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiUm9ic29uIEFsdmVzIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicm9ic29uQHRlc3R1c2VyLmNvbSIsImdpdmVuX25hbWUiOiJSb2Jzb24iLCJmYW1pbHlfbmFtZSI6IkFsdmVzIiwiZW1haWwiOiJyb2Jzb25AdGVzdHVzZXIuY29tIn0.lQWdixaG120TvHVdGStMini8IeZKwZew47GF5YbETPSTTAP6DOhcUe0gOSj4uiy4jVSPseTC4gyoR263MdMgma50so5fAbfYl4vLNa1tSJLwJJeNLyoIPBA03YFgVrPHsh48xtOXXIXFIY5kw8JsT-yPA-liLdwKC5AP-Bw1XkwFoiLqfgYI1IC1rNM2sM_97XjcJ2IGRiNOQFanw7k3QqM4NF7Sed1U4ndjY4nbNPUkS6YtO6oxF4-IqePLdEKuNhbwfzdLK_rB6FIoI-iBW8QH91So3BQBMsfirk4TWfZ5NGFeO7aY5pIRK6XxrKcMyxBVSeZudMyHndeQ8Zx0fQ",
+                "useTokenType": "access_token",
+                "grant_type": "password_credentials",
+                "accessTokenUrl": "http://{{host}}:8080/realms/{{healm}}/protocol/openid-connect/token",
+                "clientId": "{{myclientaccessgrant}}",
+                "username": "{{username}}",
+                "password": "{{password}}",
+                "challengeAlgorithm": "S256",
+                "client_authentication": "header",
+                "useTokenConfigAsRefreshTokenConfig": true,
+                "queryParamKey": "access_token",
+                "headerPrefix": "Bearer"
+              }
+            },
+            "securityScheme": {},
+            "commonParameters": {
+              "query": [],
+              "body": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "21620605",
+                "code": 200,
+                "name": "Success",
+                "headers": [],
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "description": "",
+                "contentType": "json",
+                "mediaType": "",
+                "oasExtensions": ""
+              }
+            ],
+            "responseExamples": [],
+            "requestBody": {
+              "type": "none",
+              "parameters": [],
+              "mediaType": "",
+              "examples": [],
+              "oasExtensions": ""
+            },
+            "description": "",
+            "tags": [],
+            "status": "developing",
+            "serverId": "",
+            "operationId": "",
+            "sourceUrl": "",
+            "ordering": 30,
+            "cases": [],
+            "mocks": [],
+            "customApiFields": "{}",
+            "advancedSettings": {
+              "disabledSystemHeaders": {}
+            },
+            "mockScript": {},
+            "codeSamples": [],
+            "commonResponseStatus": {},
+            "responseChildren": [
+              "BLANK.21620605"
+            ],
+            "visibility": "INHERITED",
+            "oasExtensions": "",
+            "preProcessors": [],
+            "postProcessors": [],
+            "inheritPostProcessors": {},
+            "inheritPreProcessors": {}
+          }
+        },
+        {
+          "name": "Auth:ClientCredentials:NoAccessGrant",
+          "api": {
+            "id": "15775748",
+            "method": "post",
+            "path": "",
+            "parameters": {},
+            "auth": {
+              "type": "oauth2",
+              "oauth2": {
+                "addTokenTo": "header",
+                "tokenDetail": "{\"refresh_token\":\"\",\"id_token\":\"\",\"access_token\":\"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFLU54cTdaN2VkNzVfUUdrSG1PYXlCRW53OUlwVWlzLVJzVkNSdXAtdmFnIn0.eyJleHAiOjE3NDQzMzIzNTUsImlhdCI6MTc0NDMzMjA1NSwianRpIjoiODlmNWI5ZDAtYzQ1MC00NjM3LThlMmYtOWRlNDE5NGQ1OTkyIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9teXJlYWxtIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjQxYzgzMWM1LTFiZjktNGEwNi04OTkxLTRiN2ExZWViZjhlMCIsInR5cCI6IkJlYXJlciIsImF6cCI6Im15Y2xpZW50LXNlY3JldCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1teXJlYWxtIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfSwibXljbGllbnQtc2VjcmV0Ijp7InJvbGVzIjpbInVtYV9wcm90ZWN0aW9uIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiY2xpZW50SG9zdCI6IjE3Mi4xOC4wLjEiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1teWNsaWVudC1zZWNyZXQiLCJjbGllbnRBZGRyZXNzIjoiMTcyLjE4LjAuMSIsImNsaWVudF9pZCI6Im15Y2xpZW50LXNlY3JldCJ9.Mzx_dOOzwaujpe_dZs1n3UkhS8uTzIdlgThhCxWlSzkSqTd82I8Lq2Ccp1jiOlHLTqYbkCW2LwRGEBZcwBgmSPAhj7gtPBNUjEAqCr53H_fE7EEwTGddgAsTw-q0G6ZVm9Onm-SvaRK-2EpQBYl2IoHev4XuTR7Q_apyzHYTU_K43oq7-fEJDga_EJecBMNZTmwFYGM_U8ca1pT1NKeEes4A3FNF2pXLPOUPG5ofE45KeSgdk0zufuyN11GRHZ3KB3ZqgsxmpXELyaWrovb7UsLHuPhNfRB7m_eYn1OhhuxC9DjLYtg1lzJvnx0U_MHWo2uK1ZKzxGXyIWznVe5J_w\",\"token_type\":\"Bearer\",\"scope\":\"profile email\",\"expires_in\":300,\"timestamp\":1744332055}",
+                "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFLU54cTdaN2VkNzVfUUdrSG1PYXlCRW53OUlwVWlzLVJzVkNSdXAtdmFnIn0.eyJleHAiOjE3NDQzMzIzNTUsImlhdCI6MTc0NDMzMjA1NSwianRpIjoiODlmNWI5ZDAtYzQ1MC00NjM3LThlMmYtOWRlNDE5NGQ1OTkyIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9teXJlYWxtIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjQxYzgzMWM1LTFiZjktNGEwNi04OTkxLTRiN2ExZWViZjhlMCIsInR5cCI6IkJlYXJlciIsImF6cCI6Im15Y2xpZW50LXNlY3JldCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1teXJlYWxtIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfSwibXljbGllbnQtc2VjcmV0Ijp7InJvbGVzIjpbInVtYV9wcm90ZWN0aW9uIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiY2xpZW50SG9zdCI6IjE3Mi4xOC4wLjEiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1teWNsaWVudC1zZWNyZXQiLCJjbGllbnRBZGRyZXNzIjoiMTcyLjE4LjAuMSIsImNsaWVudF9pZCI6Im15Y2xpZW50LXNlY3JldCJ9.Mzx_dOOzwaujpe_dZs1n3UkhS8uTzIdlgThhCxWlSzkSqTd82I8Lq2Ccp1jiOlHLTqYbkCW2LwRGEBZcwBgmSPAhj7gtPBNUjEAqCr53H_fE7EEwTGddgAsTw-q0G6ZVm9Onm-SvaRK-2EpQBYl2IoHev4XuTR7Q_apyzHYTU_K43oq7-fEJDga_EJecBMNZTmwFYGM_U8ca1pT1NKeEes4A3FNF2pXLPOUPG5ofE45KeSgdk0zufuyN11GRHZ3KB3ZqgsxmpXELyaWrovb7UsLHuPhNfRB7m_eYn1OhhuxC9DjLYtg1lzJvnx0U_MHWo2uK1ZKzxGXyIWznVe5J_w",
+                "useTokenType": "access_token",
+                "grant_type": "client_credentials",
+                "accessTokenUrl": "http://{{host}}:8080/realms/{{healm}}/protocol/openid-connect/token",
+                "clientId": "{{myclientsecret}}",
+                "clientSecret": "{{myclientsecret_secret}}",
+                "challengeAlgorithm": "S256",
+                "client_authentication": "header",
+                "useTokenConfigAsRefreshTokenConfig": true,
+                "queryParamKey": "access_token",
+                "headerPrefix": "Bearer"
+              }
+            },
+            "securityScheme": {},
+            "commonParameters": {
+              "query": [],
+              "body": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "21620370",
+                "code": 200,
+                "name": "Success",
+                "headers": [],
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "description": "",
+                "contentType": "json",
+                "mediaType": "",
+                "oasExtensions": ""
+              }
+            ],
+            "responseExamples": [],
+            "requestBody": {
+              "type": "none",
+              "parameters": [],
+              "mediaType": "",
+              "examples": [],
+              "oasExtensions": ""
+            },
+            "description": "",
+            "tags": [],
+            "status": "developing",
+            "serverId": "",
+            "operationId": "",
+            "sourceUrl": "",
+            "ordering": 40,
+            "cases": [],
+            "mocks": [],
+            "customApiFields": "{}",
+            "advancedSettings": {
+              "disabledSystemHeaders": {}
+            },
+            "mockScript": {},
+            "codeSamples": [],
+            "commonResponseStatus": {},
+            "responseChildren": [
+              "BLANK.21620370"
+            ],
+            "visibility": "INHERITED",
+            "oasExtensions": "",
+            "preProcessors": [],
+            "postProcessors": [],
+            "inheritPostProcessors": {},
+            "inheritPreProcessors": {}
+          }
+        },
+        {
+          "name": "Auth:AuthorizationCode:NoAccessGrant",
+          "api": {
+            "id": "15778692",
+            "method": "post",
+            "path": "",
+            "parameters": {},
+            "auth": {
+              "type": "oauth2",
+              "oauth2": {
+                "addTokenTo": "header",
+                "tokenDetail": "{\"refresh_token\":\"eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIyMGYxN2UxZS02YWIyLTQxMDEtOTNkYS02ZWRiMzZkOTBiZDcifQ.eyJleHAiOjE3NDQzMzM4ODksImlhdCI6MTc0NDMzMjA4OSwianRpIjoiYWQ2ZTdiY2QtMjkwZC00Y2FmLWE5MjgtMzJjNGEyOTRjMzRhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9teXJlYWxtIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9teXJlYWxtIiwic3ViIjoiMjEzN2I0NTMtOWI2OS00M2QxLWIzYjEtNzY4ODkyMDUwYjkwIiwidHlwIjoiUmVmcmVzaCIsImF6cCI6Im15Y2xpZW50LW5vLWFjY2Vzc2dyYW50Iiwic2lkIjoiMjI1MWI1ZjUtYTBmMi00OTQ3LTk5YmUtNDhhYTA1Y2QzMDJkIiwic2NvcGUiOiJwcm9maWxlIGFjciBiYXNpYyByb2xlcyB3ZWItb3JpZ2lucyBlbWFpbCJ9.EEHbZvoEBLVWyj_S2KIodAWSRXLza13FDq1nJe22h1mSnu8jS_TsCEl6_W36AoTsAyexOOSht_K92miunsDYoQ\",\"id_token\":\"\",\"access_token\":\"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFLU54cTdaN2VkNzVfUUdrSG1PYXlCRW53OUlwVWlzLVJzVkNSdXAtdmFnIn0.eyJleHAiOjE3NDQzMzIzODksImlhdCI6MTc0NDMzMjA4OSwiYXV0aF90aW1lIjoxNzQ0MzMyMDg5LCJqdGkiOiIwM2MwZDQxNi02MDhjLTQ5MjEtOGE3Mi0zMGRmMTVlNDkwNGQiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL215cmVhbG0iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMjEzN2I0NTMtOWI2OS00M2QxLWIzYjEtNzY4ODkyMDUwYjkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibXljbGllbnQtbm8tYWNjZXNzZ3JhbnQiLCJzaWQiOiIyMjUxYjVmNS1hMGYyLTQ5NDctOTliZS00OGFhMDVjZDMwMmQiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbXlyZWFsbSIsIm15cmVhbG0iLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJSb2Jzb24gQWx2ZXMiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJyb2Jzb25AdGVzdHVzZXIuY29tIiwiZ2l2ZW5fbmFtZSI6IlJvYnNvbiIsImZhbWlseV9uYW1lIjoiQWx2ZXMiLCJlbWFpbCI6InJvYnNvbkB0ZXN0dXNlci5jb20ifQ.Ho3tnqWfUWqIamjkH-0g0ICqVkGGeGuTSA7_gA0bwUoWpOKUAPFEPE5mmvhlGdwaTtaUU_OAylTc_eOG9ph6gtMJ5J0-J-1acU00gdtrerfPI9xGeI31prsybi_yUT98V79ZP2Srk75ootpFQbTYrU-wIVq8HGI2e5TCgAq3P2kXFUDDqnNdbhXE0KIfDo666GxgUQ5EITU4jsK5VIx8GkN_RbOcd4-eM0cJpDYDwn8bttaur0yL9Tvpz0wa8v8jzLAs3cEjvLT3kVFf3r-MqacXj6U635SqQsuOhwfLu54DHH7RXxhC5WBQ6_4iR6c8XobH9hKbbk_Jqf4OcXUdCw\",\"token_type\":\"Bearer\",\"scope\":\"profile email\",\"expires_in\":300,\"timestamp\":1744332089}",
+                "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFLU54cTdaN2VkNzVfUUdrSG1PYXlCRW53OUlwVWlzLVJzVkNSdXAtdmFnIn0.eyJleHAiOjE3NDQzMzIzODksImlhdCI6MTc0NDMzMjA4OSwiYXV0aF90aW1lIjoxNzQ0MzMyMDg5LCJqdGkiOiIwM2MwZDQxNi02MDhjLTQ5MjEtOGE3Mi0zMGRmMTVlNDkwNGQiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL215cmVhbG0iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMjEzN2I0NTMtOWI2OS00M2QxLWIzYjEtNzY4ODkyMDUwYjkwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibXljbGllbnQtbm8tYWNjZXNzZ3JhbnQiLCJzaWQiOiIyMjUxYjVmNS1hMGYyLTQ5NDctOTliZS00OGFhMDVjZDMwMmQiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbXlyZWFsbSIsIm15cmVhbG0iLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJSb2Jzb24gQWx2ZXMiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJyb2Jzb25AdGVzdHVzZXIuY29tIiwiZ2l2ZW5fbmFtZSI6IlJvYnNvbiIsImZhbWlseV9uYW1lIjoiQWx2ZXMiLCJlbWFpbCI6InJvYnNvbkB0ZXN0dXNlci5jb20ifQ.Ho3tnqWfUWqIamjkH-0g0ICqVkGGeGuTSA7_gA0bwUoWpOKUAPFEPE5mmvhlGdwaTtaUU_OAylTc_eOG9ph6gtMJ5J0-J-1acU00gdtrerfPI9xGeI31prsybi_yUT98V79ZP2Srk75ootpFQbTYrU-wIVq8HGI2e5TCgAq3P2kXFUDDqnNdbhXE0KIfDo666GxgUQ5EITU4jsK5VIx8GkN_RbOcd4-eM0cJpDYDwn8bttaur0yL9Tvpz0wa8v8jzLAs3cEjvLT3kVFf3r-MqacXj6U635SqQsuOhwfLu54DHH7RXxhC5WBQ6_4iR6c8XobH9hKbbk_Jqf4OcXUdCw",
+                "useTokenType": "access_token",
+                "grant_type": "authorization_code",
+                "authUrl": "http://{{host}}:8080/realms/{{healm}}/protocol/openid-connect/auth",
+                "accessTokenUrl": "http://{{host}}:8080/realms/{{healm}}/protocol/openid-connect/token",
+                "redirect_uri": "",
+                "clientId": "{{myclient}}",
+                "challengeAlgorithm": "S256",
+                "client_authentication": "header",
+                "useTokenConfigAsRefreshTokenConfig": true,
+                "queryParamKey": "access_token",
+                "headerPrefix": "Bearer"
+              }
+            },
+            "securityScheme": {},
+            "commonParameters": {
+              "query": [],
+              "body": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "21626429",
+                "code": 200,
+                "name": "Success",
+                "headers": [],
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "description": "",
+                "contentType": "json",
+                "mediaType": "",
+                "oasExtensions": ""
+              }
+            ],
+            "responseExamples": [],
+            "requestBody": {
+              "type": "none",
+              "parameters": [],
+              "mediaType": "",
+              "examples": [],
+              "oasExtensions": ""
+            },
+            "description": "",
+            "tags": [],
+            "status": "developing",
+            "serverId": "",
+            "operationId": "",
+            "sourceUrl": "",
+            "ordering": 50,
+            "cases": [],
+            "mocks": [],
+            "customApiFields": "{}",
+            "advancedSettings": {
+              "disabledSystemHeaders": {}
+            },
+            "mockScript": {},
+            "codeSamples": [],
+            "commonResponseStatus": {},
+            "responseChildren": [
+              "BLANK.21626429"
+            ],
+            "visibility": "INHERITED",
+            "oasExtensions": "",
+            "preProcessors": [],
+            "postProcessors": [],
+            "inheritPostProcessors": {},
+            "inheritPreProcessors": {}
+          }
+        },
+        {
+          "name": "Body:AuthorizationCode:NoAccessgrant",
+          "api": {
+            "id": "15782129",
+            "method": "get",
+            "path": "http://{{host}}:8080/realms/{{healm}}/protocol/openid-connect/auth",
+            "parameters": {
+              "query": [
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "JHJZfzKPR9",
+                  "enable": true,
+                  "name": "response_type",
+                  "example": "code"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "u3VXMhHCRr",
+                  "enable": true,
+                  "name": "client_id",
+                  "example": "{{myclient}}"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "ytMt0BEtUv",
+                  "enable": true,
+                  "name": "redirect_uri",
+                  "example": "http://localhost:8000"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "tUuqIOoI1O",
+                  "enable": true,
+                  "name": "scope",
+                  "example": "openid"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "vVsaasIC1I",
+                  "enable": true,
+                  "name": "state",
+                  "example": "xyz123"
+                }
+              ],
+              "path": []
+            },
+            "auth": {},
+            "securityScheme": {},
+            "commonParameters": {
+              "query": [],
+              "body": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "21631748",
+                "code": 400,
+                "name": "Bad Request",
+                "headers": [],
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "description": "",
+                "contentType": "html",
+                "mediaType": "",
+                "oasExtensions": ""
+              }
+            ],
+            "responseExamples": [],
+            "requestBody": {
+              "type": "none",
+              "parameters": [],
+              "mediaType": "",
+              "examples": [],
+              "oasExtensions": ""
+            },
+            "description": "",
+            "tags": [],
+            "status": "developing",
+            "serverId": "",
+            "operationId": "",
+            "sourceUrl": "",
+            "ordering": 60,
+            "cases": [],
+            "mocks": [],
+            "customApiFields": "{}",
+            "advancedSettings": {
+              "disabledSystemHeaders": {}
+            },
+            "mockScript": {},
+            "codeSamples": [],
+            "commonResponseStatus": {},
+            "responseChildren": [
+              "BLANK.21631748"
+            ],
+            "visibility": "INHERITED",
+            "oasExtensions": "",
+            "preProcessors": [],
+            "postProcessors": [],
+            "inheritPostProcessors": {},
+            "inheritPreProcessors": {}
+          }
+        },
+        {
+          "name": "Body:AuthorizationCode:NoAccessgrant",
+          "api": {
+            "id": "15782331",
+            "method": "post",
+            "path": "http://{{host}}:8080/realms/{{healm}}/protocol/openid-connect/auth",
+            "parameters": {
+              "query": [],
+              "path": []
+            },
+            "auth": {},
+            "securityScheme": {},
+            "commonParameters": {
+              "query": [],
+              "body": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "21630474",
+                "code": 400,
+                "name": "Bad Request",
+                "headers": [],
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "description": "",
+                "contentType": "html",
+                "mediaType": "",
+                "oasExtensions": ""
+              }
+            ],
+            "responseExamples": [],
+            "requestBody": {
+              "type": "application/x-www-form-urlencoded",
+              "parameters": [
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "y6lmLco20c",
+                  "example": "code",
+                  "enable": true,
+                  "name": "response_type"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "b9H5HVdaQY",
+                  "example": "{{myclient}}",
+                  "enable": true,
+                  "name": "client_id"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "RjIDs1tlaA",
+                  "example": "http://localhost:8000/",
+                  "enable": true,
+                  "name": "redirect_uri"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "swJQP5ZTmC",
+                  "example": "openid",
+                  "enable": true,
+                  "name": "scope"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "yk6ykmohpX",
+                  "example": "xyz123",
+                  "enable": true,
+                  "name": "state"
+                }
+              ],
+              "mediaType": "",
+              "examples": [],
+              "oasExtensions": ""
+            },
+            "description": "",
+            "tags": [],
+            "status": "developing",
+            "serverId": "",
+            "operationId": "",
+            "sourceUrl": "",
+            "ordering": 66,
+            "cases": [],
+            "mocks": [],
+            "customApiFields": "{}",
+            "advancedSettings": {
+              "disabledSystemHeaders": {}
+            },
+            "mockScript": {},
+            "codeSamples": [],
+            "commonResponseStatus": {},
+            "responseChildren": [
+              "BLANK.21630474"
+            ],
+            "visibility": "INHERITED",
+            "oasExtensions": "",
+            "preProcessors": [],
+            "postProcessors": [],
+            "inheritPostProcessors": {},
+            "inheritPreProcessors": {}
+          }
+        },
+        {
+          "name": "Query1:AuthenticationCode:PKCE",
+          "api": {
+            "id": "15847123",
+            "method": "get",
+            "path": "http://{{host}}:8080/realms/{{realm}}/protocol/openid-connect/auth",
+            "parameters": {
+              "query": [
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "mLLXoZUKy3",
+                  "enable": true,
+                  "name": "response_type",
+                  "example": "code"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "idQjPbCCbO",
+                  "enable": true,
+                  "name": "client_id",
+                  "example": "myclient-public"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "yaYXqGSLaM",
+                  "enable": true,
+                  "name": "redirect_uri",
+                  "example": "http://localhost:8000"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "rxvFtnbzio",
+                  "enable": true,
+                  "name": "scope",
+                  "example": "openid"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "9KhgLvuAoA",
+                  "enable": true,
+                  "name": "state",
+                  "example": "1234567890"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "Jctjy4TcJU",
+                  "enable": true,
+                  "name": "code_challenge",
+                  "example": "{{code_challenge}}"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "nyaByN3peq",
+                  "enable": true,
+                  "name": "code_challenge_method",
+                  "example": "S256"
+                }
+              ]
+            },
+            "auth": {},
+            "securityScheme": {},
+            "commonParameters": {
+              "query": [],
+              "body": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "21740402",
+                "code": 200,
+                "name": "OK",
+                "headers": [],
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "description": "",
+                "contentType": "html",
+                "mediaType": "",
+                "oasExtensions": ""
+              }
+            ],
+            "responseExamples": [],
+            "requestBody": {
+              "type": "none",
+              "parameters": [],
+              "mediaType": "",
+              "examples": [],
+              "oasExtensions": ""
+            },
+            "description": "",
+            "tags": [],
+            "status": "developing",
+            "serverId": "",
+            "operationId": "",
+            "sourceUrl": "",
+            "ordering": 76,
+            "cases": [],
+            "mocks": [],
+            "customApiFields": "{}",
+            "advancedSettings": {
+              "disabledSystemHeaders": {}
+            },
+            "mockScript": {},
+            "codeSamples": [],
+            "commonResponseStatus": {},
+            "responseChildren": [
+              "BLANK.21740402"
+            ],
+            "visibility": "INHERITED",
+            "oasExtensions": "",
+            "preProcessors": [],
+            "postProcessors": [],
+            "inheritPostProcessors": {},
+            "inheritPreProcessors": {}
+          }
+        },
+        {
+          "name": "Query2:AuthenticationCode:PKCE",
+          "api": {
+            "id": "15847144",
+            "method": "post",
+            "path": "http://{{host}}:8080/realms/{{realm}}/protocol/openid-connect/token",
+            "parameters": {},
+            "auth": {},
+            "securityScheme": {},
+            "commonParameters": {
+              "query": [],
+              "body": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "21740344",
+                "code": 200,
+                "name": "Success",
+                "headers": [],
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "description": "",
+                "contentType": "json",
+                "mediaType": "",
+                "oasExtensions": ""
+              }
+            ],
+            "responseExamples": [],
+            "requestBody": {
+              "type": "application/x-www-form-urlencoded",
+              "parameters": [
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "g6w01cd2De",
+                  "example": "authorization_code",
+                  "enable": true,
+                  "name": "grant_type"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "7zd17wsaHE",
+                  "example": "{{myclient}}",
+                  "enable": true,
+                  "name": "client_id"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "CAiclRSJrR",
+                  "example": "ba8c656a-23f3-43f5-8376-dca4ab629bb7.6c281eff-7dab-4961-8a39-bf8cb6b7e9cc.1a05dfe0-9467-4fd6-af8a-c5017df2b86b",
+                  "enable": true,
+                  "name": "code"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "n4bNuTXLyV",
+                  "example": "{{redirect_uri}}",
+                  "enable": true,
+                  "name": "redirect_uri"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "5ktX8FansC",
+                  "example": "{{code_verifier}}",
+                  "enable": true,
+                  "name": "code_verifier"
+                }
+              ],
+              "mediaType": "",
+              "examples": [],
+              "oasExtensions": ""
+            },
+            "description": "",
+            "tags": [],
+            "status": "developing",
+            "serverId": "",
+            "operationId": "",
+            "sourceUrl": "",
+            "ordering": 86,
+            "cases": [],
+            "mocks": [],
+            "customApiFields": "{}",
+            "advancedSettings": {
+              "disabledSystemHeaders": {}
+            },
+            "mockScript": {},
+            "codeSamples": [],
+            "commonResponseStatus": {},
+            "responseChildren": [
+              "BLANK.21740344"
+            ],
+            "visibility": "INHERITED",
+            "oasExtensions": "",
+            "preProcessors": [],
+            "postProcessors": [],
+            "inheritPostProcessors": {},
+            "inheritPreProcessors": {}
+          }
+        }
+      ]
+    }
+  ],
+  "socketCollection": [],
+  "docCollection": [],
+  "webSocketCollection": [],
+  "socketIOCollection": [],
+  "responseCollection": [
+    {
+      "_databaseId": 908380,
+      "updatedAt": "2025-04-09T13:40:51.000Z",
+      "name": "Root",
+      "type": "root",
+      "children": [],
+      "parentId": 0,
+      "id": 908380,
+      "ordering": [],
+      "items": []
+    }
+  ],
+  "schemaCollection": [
+    {
+      "id": 1910687,
+      "name": "Root",
+      "visibility": "SHARED",
+      "items": [],
+      "ordering": []
+    }
+  ],
+  "securitySchemeCollection": [
+    {
+      "id": 477074,
+      "name": "Root",
+      "items": [],
+      "ordering": []
+    }
+  ],
+  "requestCollection": [
+    {
+      "name": "Root",
+      "children": [],
+      "ordering": [
+        "requestFolder.1207497"
+      ],
+      "items": []
+    }
+  ],
+  "apiTestCaseCollection": [
+    {
+      "name": "Root",
+      "children": [],
+      "items": []
+    }
+  ],
+  "testCaseReferences": [],
+  "environments": [
+    {
+      "name": "Keycloak",
+      "requestProxyAgentSettings": {},
+      "variables": [
+        {
+          "name": "host",
+          "value": "localhost",
+          "description": "",
+          "initialValue": "localhost",
+          "isSync": true
+        },
+        {
+          "name": "realm",
+          "value": "myrealm",
+          "description": "",
+          "initialValue": "myrealm",
+          "isSync": true
+        },
+        {
+          "name": "grant_type",
+          "value": "password",
+          "description": "",
+          "initialValue": "password",
+          "isSync": true
+        },
+        {
+          "name": "username",
+          "value": "robson@testuser.com",
+          "description": "",
+          "initialValue": "robson@testuser.com",
+          "isSync": true
+        },
+        {
+          "name": "password",
+          "value": "keycloak@2025",
+          "description": "",
+          "initialValue": "keycloak@2025",
+          "isSync": true
+        },
+        {
+          "name": "myclient",
+          "value": "myclient-public",
+          "description": "",
+          "initialValue": "myclient-public",
+          "isSync": true
+        },
+        {
+          "name": "myclientaccessgrant",
+          "value": "myclient-accessgrant",
+          "description": "",
+          "initialValue": "myclient-accessgrant",
+          "isSync": true
+        },
+        {
+          "name": "myclientsecret",
+          "value": "myclient-secret",
+          "description": "",
+          "initialValue": "myclient-secret",
+          "isSync": true
+        },
+        {
+          "name": "myclientsecret_secret",
+          "value": "FOJiVKUZC0CtLtRi_qURIE-iiGL2Xq2qGVHhjX4uZ-U",
+          "description": "",
+          "initialValue": "FOJiVKUZC0CtLtRi_qURIE-iiGL2Xq2qGVHhjX4uZ-U",
+          "isSync": true
+        },
+        {
+          "name": "code_verifier",
+          "value": "7gmRK6zYohWDlHdvsBy3LbGl1DF_xmpqSWW5QTk5IQY",
+          "description": "",
+          "initialValue": "7gmRK6zYohWDlHdvsBy3LbGl1DF_xmpqSWW5QTk5IQY",
+          "isSync": true
+        },
+        {
+          "name": "code_challenge",
+          "value": "5RAifWyZdPOXweJVjqaE0tEvPOII3B6qAJJOoNniOaY",
+          "description": "",
+          "initialValue": "5RAifWyZdPOXweJVjqaE0tEvPOII3B6qAJJOoNniOaY",
+          "isSync": true
+        },
+        {
+          "name": "redirect_uri",
+          "value": "http://localhost:8000",
+          "description": "",
+          "initialValue": "http://localhost:8000",
+          "isSync": true
+        }
+      ],
+      "parameters": {
+        "cookie": [],
+        "query": [],
+        "header": [],
+        "body": []
+      },
+      "type": "normal",
+      "visibility": "protected",
+      "ordering": 30,
+      "tags": [
+        {
+          "name": "",
+          "color": "#4CAF50"
+        }
+      ],
+      "id": "3527361",
+      "baseUrl": "http://localhost:8080",
+      "baseUrls": {
+        "default": "http://localhost:8080"
+      }
+    }
+  ],
+  "commonScripts": [],
+  "databaseConnections": [],
+  "globalVariables": [
+    {
+      "id": "875069",
+      "variables": []
+    }
+  ],
+  "commonParameters": null,
+  "projectSetting": {
+    "id": "875099",
+    "auth": {},
+    "securityScheme": {},
+    "servers": [
+      {
+        "id": "default",
+        "name": "Default Server"
+      }
+    ],
+    "gateway": [],
+    "language": "en-US",
+    "apiStatuses": [
+      "developing",
+      "testing",
+      "released",
+      "deprecated"
+    ],
+    "mockSettings": {},
+    "preProcessors": [],
+    "postProcessors": [],
+    "advancedSettings": {
+      "enableJsonc": false,
+      "enableBigint": false,
+      "responseValidate": true,
+      "enableTestScenarioSetting": false,
+      "enableYAPICompatScript": false,
+      "isDefaultUrlEncoding": 3,
+      "publishedDocUrlRules": {
+        "defaultRule": "SLUGIFY_WITH_RESOURCE_KEY",
+        "resourceKeyStandard": "NEW"
+      }
+    },
+    "initialDisabledMockIds": [],
+    "cloudMock": {
+      "security": "free",
+      "enable": false,
+      "tokenKey": "apidogToken"
+    }
+  },
+  "customFunctions": [],
+  "projectAssociations": []
+}
