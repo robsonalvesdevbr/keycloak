@@ -36,16 +36,18 @@ services:
       - br.dev.robsonalves.service.description=Keycloak
     container_name: keycloak
     restart: unless-stopped
-    command: --verbose start-dev
+    command: --verbose start-dev --import-realm
     #command: start-dev --db postgres --db-url-host db-keycloak --db-username keycloak --db-password keycloak
     #command: start-dev --db ${KC_DB:-postgres} --db-url-host ${KC_DB_HOST:-db-keycloak} --db-username ${POSTGRES_USER:-keycloak} --db-password ${POSTGRES_PASSWORD:-keycloak}
+    volumes:
+      - ./realm-export:/opt/keycloak/data/import
     environment:
       - KC_BOOTSTRAP_ADMIN_USERNAME=${KEYCLOAK_ADMIN:-admin}
       - KC_BOOTSTRAP_ADMIN_PASSWORD=${KEYCLOAK_ADMIN_PASSWORD:-password}
       - KC_DB=${KC_DB:-postgres}
       - KC_DB_URL_HOST=${KC_DB_URL_HOST:-db-keycloak}  
       - KC_DB_USERNAME=${KC_DB_USERNAME:-keycloak}
-      - KC_DB_PASSWORD=${KC_DB_PASSWORD:-keycloak}
+      - KC_DB_PASSWORD=${KC_DB_PASSWORD:-keycloak}    
     ports:
       - "8080:8080"
     depends_on:
