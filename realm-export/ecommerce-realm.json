@@ -2,6 +2,8 @@
 	"realm": "ecommerce-realm",
 	"displayName": "Ecommerce Realm",
 	"enabled": true,
+	"adminEventsEnabled": true,
+	"eventsEnabled": true,
 	"clients": [
 		{
 			"clientId": "app-payment-client",
