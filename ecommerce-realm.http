@@ -25,4 +25,4 @@ grant_type=authorization_code
 &client_id=app-payment-client
 &code={{code}}
 &redirect_uri=http://localhost:8000
-&code_verifier=J0zA1PmWGlQXFyWgX3vA88imBV0iBKxsJZZLbvta39Y
+&code_verifier={{code-verifier}}
