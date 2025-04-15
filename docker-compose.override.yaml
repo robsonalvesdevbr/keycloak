@@ -2,4 +2,4 @@ services:
   keycloak:
     command: --verbose start-dev --import-realm
     volumes:
-      - ./realm-export:/opt/keycloak/data/import
+      - ./realms:/opt/keycloak/data/import
