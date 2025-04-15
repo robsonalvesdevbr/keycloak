@@ -7,9 +7,7 @@ services:
       - br.dev.robsonalves.service.description=Keycloak
     container_name: keycloak
     restart: unless-stopped
-    command: --verbose start-dev --import-realm
-    #volumes:
-    #  - ./realm-export:/opt/keycloak/data/import
+    command: --verbose start-dev
     environment:
       - KC_BOOTSTRAP_ADMIN_USERNAME=${KEYCLOAK_ADMIN:-admin}
       - KC_BOOTSTRAP_ADMIN_PASSWORD=${KEYCLOAK_ADMIN_PASSWORD:-password}
