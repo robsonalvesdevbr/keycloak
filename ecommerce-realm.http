@@ -1,5 +1,5 @@
 @base-url = localhost:8080
-@realm = ecommerce-realm
+@realm = ecommerce
 @client-id = app-payment-client
 @code-verifier = J0zA1PmWGlQXFyWgX3vA88imBV0iBKxsJZZLbvta39Y
 @code-challenge = MC1-tqVFMXNPwT-7tM0OJY1rWm1DRsuoMWIBH39Xu1U
@@ -18,7 +18,7 @@ GET http://{{base-url}}/realms/{{realm}}/protocol/openid-connect/auth
 ###
 # Authetication Code PKCE 2
 # @prompt code Code authorization
-POST http://localhost:8080/realms/ecommerce-realm/protocol/openid-connect/token
+POST http://{{base-url}}/realms/{{realm}}/protocol/openid-connect/token
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=authorization_code
