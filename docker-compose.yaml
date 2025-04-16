@@ -1,9 +1,9 @@
 services:
   keycloak:
-    image: quay.io/keycloak/keycloak:26.1.4
+    image: quay.io/keycloak/keycloak:26.2.0
     labels:
       - br.dev.robsonalves.service.group=keycloak
-      - br.dev.robsonalves.service.version=26.1.4
+      - br.dev.robsonalves.service.version=26.2.0
       - br.dev.robsonalves.service.description=Keycloak
     container_name: keycloak
     restart: unless-stopped
