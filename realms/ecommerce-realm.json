@@ -1,6 +1,6 @@
 {
-	"realm": "e-commerce-realm",
-	"displayName": "E-commerce Realm",
+	"realm": "ecommerce",
+	"displayName": "E-commerce",
 	"enabled": true,
 	"adminEventsEnabled": true,
 	"eventsEnabled": true,
