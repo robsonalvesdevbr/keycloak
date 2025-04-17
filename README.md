@@ -34,6 +34,10 @@ docker compose -f docker-compose.yaml -f docker-compose.override.yaml up -d
   "email": "robson@testuser.com"
 }
 ```
+# Para ignorar o erro de script upload remover authorizationSettings
+```txt
+authorizationSettings
+```
 
 ![Keycloak](img/jwt_1.png)
 ![Keycloak](img/jwt_2.png)
