@@ -461,6 +461,22 @@
 			},
 			"notBefore": 0,
 			"groups": []
+		},
+		{
+			"username": "robson",
+			"enabled": true,
+			"email": "robson@testuser.com",
+			"firstName": "Robson",
+			"lastName": "Alves",
+			"emailVerified": true,
+			"credentials": [
+				{
+					"type": "password",
+					"value": "keycloak@2025"
+				}
+			],
+			"realmRoles": ["user", "offline_access"],
+			"groups": ["/app-payment-group"]
 		}
 	],
 	"scopeMappings": [
