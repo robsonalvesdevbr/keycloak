@@ -6,7 +6,7 @@ services:
       - br.dev.robsonalves.service.version=${KEYCLOAK_VERSION:-26.2.1}
       - br.dev.robsonalves.service.description=Keycloak
     container_name: keycloak
-    restart: unless-stopped
+    #restart: unless-stopped
     command: --verbose start-dev
     environment:
       - KC_BOOTSTRAP_ADMIN_USERNAME=${KEYCLOAK_ADMIN:-admin}
@@ -28,7 +28,7 @@ services:
       - br.dev.robsonalves.service.version=17.4-alpine
       - br.dev.robsonalves.service.description=PostgreSQL
     container_name: db-keycloak
-    restart: unless-stopped
+    #restart: unless-stopped
     environment:
       - POSTGRES_USER=${POSTGRES_USER:-keycloak}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-keycloak}
